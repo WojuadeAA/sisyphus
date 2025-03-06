@@ -24,7 +24,7 @@ Sisyphus trading  app built with the Flutter framework and Binance Websockets AP
 ## Screen recording
 Here is a screen recording of the project:
 
-[recording](./screenshots/recording.gif)
+[recording](https://github.com/WojuadeAA/sisyphus/blob/main/screenshots/recording.gif?raw=true)
 
 
 ## Screenshots
