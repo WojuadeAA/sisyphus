@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }

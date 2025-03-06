@@ -13,6 +13,7 @@ import 'package:sisyphus/shared/utils/utils.dart';
 import 'package:sisyphus/shared/widgets/widgets.dart';
 
 class HomeScreen extends StatefulHookConsumerWidget {
+  static const routeName = '/home';
   const HomeScreen({super.key});
 
   @override

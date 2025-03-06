@@ -155,20 +155,6 @@ class Charts extends HookConsumerWidget {
             width: double.infinity,
             child: Candlesticks(
               key: Key(currentSymbol!.symbol! + currentTime.value),
-              // style: CandleSticksStyle(
-              //   borderColor: blackTint2.withOpacity(.5),
-              //   background: Colors.transparent,
-              //   primaryBull: const Color(0xff00C076),
-              //   secondaryBull: const Color(0xff25C26E),
-              //   primaryBear: const Color(0xffFF6838),
-              //   secondaryBear: const Color(0xffFF6838),
-              //   hoverIndicatorBackgroundColor: blackTint,
-              //   primaryTextColor: blackTint2,
-              //   secondaryTextColor: blackTint2,
-              //   mobileCandleHoverColor: blackTint,
-              //   loadingColor: appBlack,
-              //   toolBarColor: Colors.transparent,
-              // ),
               candles: candles,
               onLoadMoreCandles: () {
                 return ref.read(candlesNotifierProvider.notifier).loadMoreCandles(
