@@ -1,16 +1,51 @@
-# binance_websocket
+# Sisyphus
 
-A new Flutter project.
+Sisyphus trading  app built with the Flutter framework and Binance Websockets API for providing real-time candlestick charting and order book updates.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Features
+- Connects to Binance WebSockets API for real-time market data.
+- Displays live candlestick chart updates.
+- Fetches and updates order book data in real-time.
+- Uses WebSocket streaming for efficient data updates.
+- Clean and responsive UI built with Flutter.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Technologies Used
+- **Flutter**: UI framework for building cross-platform applications.
+- **WebSockets**: Used to establish a connection with Binance for live updates.
+- **Dio**: For handling HTTP requests when fetching initial market data.
+- **Hooks Riverpod**: State management for managing WebSocket streams and appstate efficiently.
+
+
+
+## Screen recording
+Here is a screen recording of the project:
+
+[recording](./screenshots/recording.gif)
+
+
+## Screenshots
+Here are some screenshots of the project:
+
+
+![Screenshot 1](./screenshots/charts_screenshot.png)
+![Screenshot 2](./screenshots/order_book_screenshot.png)
+![Screenshot 3](./screenshots/recent_trades_screenshot.png)
+![Screenshot 4](./screenshots/bottom_sheet_screenshot.png)
+![Screenshot 5](./screenshots/light_theme_screenshot.png)
+![Screenshot 6](./screenshots/menu_options_screenshot.png)
+
+
+
+
+
+
+# Binance WebSockets Flutter App
+
+A Flutter application that consumes the Binance WebSockets API to display real-time candlestick and order book data.
+
+
+
