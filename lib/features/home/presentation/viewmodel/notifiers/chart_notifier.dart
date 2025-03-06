@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sisyphus/features/home/data/models/candle_ticker_model.dart';
 import 'package:sisyphus/features/home/data/models/order_book_model.dart';
 import 'package:sisyphus/features/home/data/models/symbol_model.dart';

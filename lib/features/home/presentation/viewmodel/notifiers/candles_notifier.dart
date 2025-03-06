@@ -39,4 +39,8 @@ class CandlesNotfier extends Notifier<List<Candle>> {
         (r) => r,
       ));
   }
+
+  void updateCandles(List<Candle> candles) {
+    state = candles;
+  }
 }
