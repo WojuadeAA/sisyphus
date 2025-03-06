@@ -173,16 +173,15 @@ class ActionBottomSheet extends HookWidget {
                   ],
                 ),
               ),
-              child: MaterialButton(
-                color: Colors.transparent,
-                elevation: 0,
-                padding: const EdgeInsets.all(8),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  padding: const EdgeInsets.all(8),
+                ),
                 onPressed: () {},
-                child: const SubText(
-                  text: "Buy BTC",
-                  foreground: white,
-                  textSize: 16,
-                  fontWeight: FontWeight.w600,
+                child: Text(
+                  selectedValue.value == 0 ? "Buy BTC" : "Sell BTC",
                 ),
               ),
             ),
