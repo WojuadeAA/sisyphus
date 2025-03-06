@@ -130,13 +130,13 @@ class SummaryCardWidget extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 17),
+                  const SizedBox(width: 17),
                   Container(
                     width: 1,
                     height: 48,
                     color: divider.withOpacity(.08),
                   ),
-                  const SizedBox(height: 17),
+                  const SizedBox(width: 17),
                   SizedBox(
                     width: 90,
                     child: Column(
@@ -171,13 +171,13 @@ class SummaryCardWidget extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 17),
+                  const SizedBox(width: 17),
                   Container(
                     width: 1,
                     height: 48,
                     color: divider.withOpacity(.08),
                   ),
-                  const SizedBox(height: 17),
+                  const SizedBox(width: 17),
                   SizedBox(
                     width: 100,
                     child: Column(
