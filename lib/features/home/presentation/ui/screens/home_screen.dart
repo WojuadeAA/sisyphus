@@ -4,11 +4,11 @@ import 'package:sisyphus/core/enums/enums.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/bottom_sheet.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/charts.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/orderbook.dart';
+import 'package:sisyphus/features/home/presentation/ui/widgets/recent_trades.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/summary_card_widget.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/trades.dart';
 import 'package:sisyphus/features/home/presentation/viewmodel/notifiers/symbol_notifier.dart';
 import 'package:sisyphus/shared/utils/utils.dart';
-import 'package:sisyphus/shared/widgets/widgets.dart';
 
 import '../widgets/custom_app_bar.dart';
 import '../widgets/menu_drawer.dart';
@@ -78,7 +78,10 @@ class _MainContent extends StatelessWidget {
         const SummaryCardWidget(),
         const SizedBox(height: 8),
         DecoratedBox(
-          decoration: _tabSectionDecoration(context),
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            border: Border.all(color: Theme.of(context).shadowColor, width: 1.5),
+          ),
           child: Column(
             children: [
               _TabBarSection(tabController: tabController),
@@ -91,11 +94,6 @@ class _MainContent extends StatelessWidget {
       ],
     );
   }
-
-  BoxDecoration _tabSectionDecoration(BuildContext context) => BoxDecoration(
-        color: Theme.of(context).cardColor,
-        border: Border.all(color: Theme.of(context).shadowColor, width: 1.5),
-      );
 }
 
 class _TabBarSection extends StatelessWidget {
@@ -108,7 +106,11 @@ class _TabBarSection extends StatelessWidget {
     return Container(
       height: 42,
       margin: const EdgeInsets.all(15),
-      decoration: _tabBarDecoration(context),
+      decoration: BoxDecoration(
+        color: Theme.of(context).shadowColor,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Theme.of(context).shadowColor, width: 1.5),
+      ),
       child: TabBar(
         controller: tabController,
         padding: const EdgeInsets.all(2),
@@ -125,12 +127,6 @@ class _TabBarSection extends StatelessWidget {
       ),
     );
   }
-
-  BoxDecoration _tabBarDecoration(BuildContext context) => BoxDecoration(
-        color: Theme.of(context).shadowColor,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Theme.of(context).shadowColor, width: 1.5),
-      );
 }
 
 class _TabItem extends StatelessWidget {
@@ -165,19 +161,6 @@ class _TabViewSection extends StatelessWidget {
           RecentTradesPlaceholder(),
         ],
       ),
-    );
-  }
-}
-
-class RecentTradesPlaceholder extends StatelessWidget {
-  const RecentTradesPlaceholder({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 30,
-      padding: const EdgeInsets.all(20),
-      child: const HeaderText(text: 'Recent Trades'),
     );
   }
 }
