@@ -38,7 +38,7 @@ final socketNotifier = StreamProvider.family<CandleTickerModel, StreamValue?>((r
       if (candles[0].date == candleTicker.candle.date && candles[0].open == candleTicker.candle.open) {
         candles[0] = candleTicker.candle;
       } else if (candleTicker.candle.date.difference(candles[0].date) == candles[0].date.difference(candles[1].date)) {
-        ref.read(candlesNotifierProvider.notifier).state.insert(0, candleTicker.candle);
+        ref.read(candlesNotifierProvider.notifier).insertCandle(candleTicker.candle);
       }
     } else if (eventType == 'depthUpdate') {
       final orderBook = OrderBookModel.fromJson(map);
