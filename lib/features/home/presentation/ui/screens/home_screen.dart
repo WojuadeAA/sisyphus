@@ -9,6 +9,7 @@ import 'package:sisyphus/features/home/presentation/ui/widgets/orderbook.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/summary_card_widget.dart';
 import 'package:sisyphus/features/home/presentation/ui/widgets/trades.dart';
 import 'package:sisyphus/features/home/presentation/viewmodel/notifiers/symbol_notifier.dart';
+import 'package:sisyphus/features/home/presentation/viewmodel/notifiers/theme_notifier.dart';
 import 'package:sisyphus/shared/utils/utils.dart';
 import 'package:sisyphus/shared/widgets/widgets.dart';
 
@@ -42,7 +43,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
             top: 65,
             right: 10,
             child: Container(
-              height: 208,
               width: 214,
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -55,6 +55,45 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Consumer(
+                    builder: (context, ref, child) {
+                      final themeMode = ref.watch(themeNotifierProvider);
+
+                      return InkWell(
+                        onTap: () {
+                          ref.read(themeNotifierProvider.notifier).toggleTheme();
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 13,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                themeMode == ThemeMode.system
+                                    ? Icons.brightness_auto
+                                    : themeMode == ThemeMode.dark
+                                        ? Icons.nightlight_round
+                                        : Icons.wb_sunny,
+                                color: context.isDarkMode() ? white : blackTint2,
+                              ),
+                              const SizedBox(width: 15),
+                              SubText(
+                                text: themeMode == ThemeMode.system
+                                    ? 'System Theme'
+                                    : themeMode == ThemeMode.dark
+                                        ? 'Dark Theme'
+                                        : 'Light Theme',
+                                textSize: 16,
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                   ...drawerItems.map(
                     (e) => Padding(
                       padding: const EdgeInsets.symmetric(

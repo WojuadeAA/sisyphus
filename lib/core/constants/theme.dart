@@ -33,6 +33,20 @@ class AppTheme {
         bodyColor: appBlack,
         displayColor: appBlack,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          elevation: 0,
+          padding: const EdgeInsets.all(8),
+          textStyle: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: appBlack,
+          ),
+        ),
+      ),
       bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black.withOpacity(0)),
     );
   }
@@ -68,18 +82,19 @@ class AppTheme {
         displayColor: white,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          elevation: 0,
+          padding: const EdgeInsets.all(8),
+          textStyle: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: white,
+          ),
         ),
-        elevation: 0,
-        padding: const EdgeInsets.all(8),
-        textStyle: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: white,
-        ),
-      )),
+      ),
       bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black.withOpacity(0)),
     );
   }
